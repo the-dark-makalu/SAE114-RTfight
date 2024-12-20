@@ -1,5 +1,34 @@
+/* Général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/*----------------------------------------------------------------------------------------*/
+/*header*/
+
+header, footer {
+    background-color: rgba(0, 0, 0, 0.6); /* Fond sombre pour lisibilité */
+    backdrop-filter: blur(5px); /* Flou d'arrière-plan */
+}
+
+span {
+    color: #FFAE00;
 }
 
 header {
@@ -7,18 +36,33 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
 }
 
-nav ul {
+header h1 {
+    font-size: 2rem;
+    margin-right: 20px;
+}
+
+nav  {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-nav ul li a {
-    color: black;
+nav a {
+    color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
+    padding-left: 30px;
+}
+
+nav a:hover {
+    color: #FFAE00; /* Changera la couleur au survol */
 }
 
 .buttons {
@@ -28,9 +72,198 @@ nav ul li a {
 
 button {
     padding: 10px 20px;
-    background-color: red;
+    background-color: #FFAE00;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #8B4D10; /* Changer la couleur au survol */
+    transform: scale(1.1); /* Agrandir légèrement au survol */
+}
+
+/*-----------------------------------------------------------------------------------------*/
+/*main*/
+
+main {
+    margin-top: 10px; /* Éviter que le contenu soit caché sous le header fixe */
+    padding: 200px;
+}
+
+.logo img {
+    width: 15%;
+    height: auto;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    border-radius: 24px;
+    line-height: 1.6;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 36px;
+    border-radius: 22px;
+    color: #ffffff;
+    overflow: hidden;
+    background: #FFAE00;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .content::before {
+    position: absolute;
+    content: "";
+    top: -4%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%);
+    background: #ced8ff;
+    z-index: -1;
+    transform-origin: bottom;
+  
+    border-radius: inherit;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .content::after {
+    position: absolute;
+    content: "";
+    top: -8%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%);
+    background: #e7ecff;
+    z-index: -2;
+    transform-origin: bottom;
+    border-radius: inherit;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .content svg {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .content .para {
+    z-index: 1;
+    opacity: 1;
+    font-size: 18px;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .content .link {
+    z-index: 1;
+    color: #fea000;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .content .link:hover {
+    text-decoration: underline;
+  }
+  
+  .card:hover {
+    transform: translate(0px, -16px);
+  }
+  
+  .card:hover .content::before {
+    rotate: -8deg;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card:hover .content::after {
+    rotate: 8deg;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+/*---------------------------------------------------------------------*/
+/*footer*/
+
+footer {
+    padding: 10px;
+    color: white;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+
+
+/*---------------------------------------------------------------*/
+/* tablette */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+
+/*-----------------------------------------------------------*/
+/*telephone*/
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    main h2 {
+        font-size: 2rem;
+    }
+
+    button, .cta-button {
+        width: 100%;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .reservation {
+        padding: 20px;
+    }
 }

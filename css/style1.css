@@ -1,11 +1,34 @@
+/* Général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-image: url("https://boxemag.com/wp-content/uploads/2024/05/poster-ufc-309.jpeg");
+    background-image: url(../image/rigue.jpg);
     color: white;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/*----------------------------------------------------------------------------------------*/
+/*header*/
+
+header, footer {
+    background-color: rgba(0, 0, 0, 0.6); /* Fond sombre pour lisibilité */
+    backdrop-filter: blur(5px); /* Flou d'arrière-plan */
 }
 
 span {
-    color: red;
+    color: #FFAE00;
 }
 
 header {
@@ -13,19 +36,39 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
 }
 
-nav ul {
+header h1 {
+    font-size: 2rem;
+    margin-right: 20px;
+}
+
+nav  {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-nav ul li a {
+nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
+    padding-left: 30px;
 }
+
+nav a:hover {
+    color: #FFAE00; /* Changera la couleur au survol */
+}
+
+.logo img {
+    width: 15%;
+    height: auto;
+  }
 
 .buttons {
     display: flex;
@@ -34,9 +77,273 @@ nav ul li a {
 
 button {
     padding: 10px 20px;
-    background-color: red;
+    background-color: #FFAE00;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #8B4D10; /* Changer la couleur au survol */
+    transform: scale(1.1); /* Agrandir légèrement au survol */
+}
+
+/*-----------------------------------------------------------------------------------------*/
+/*main*/
+
+main {
+    margin-top: 10px; /* Éviter que le contenu soit caché sous le header fixe */
+    padding: 200px;
+}
+
+.video iframe {
+    padding:0px;
+    margin-top:20px;
+    margin-right:10px;
+    width: 48%;
+    height: auto;
+}
+
+
+
+.reservation {
+    background-color: rgba(0, 0, 0, 0.5); /* Fond sombre pour améliorer la lisibilité */
+    border-radius: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.reservation h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.reservation span {
+    color: #FFAE00;
+    font-weight: bold;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #FFAE00;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: #8B4D10;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #8B4D10;
+    transform: scale(1.05); /* Agrandir légèrement au survol */
+}
+
+.oui {
+    font-size: 5rem;
+    color: #FFAE00; 
+}
+
+iframe {
+    width: 560px;
+    height: 400px;
+}
+
+/*---------------------------------------------------------------------*/
+/*footer*/
+
+footer {
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    font-family: 'Oswald', sans-serif;
+}
+/*---------------------------------------------------------------*/
+/* transition */
+
+.loader {
+    width: 80px;
+    height: 50px;
+    position: relative;
+  }
+  
+  .loader-text {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    color: #C8B6FF;
+    animation: text_713 3.5s ease both infinite;
+    font-size: .8rem;
+    letter-spacing: 1px;
+  }
+  
+  .load {
+    background-color: #9A79FF;
+    border-radius: 50px;
+    display: block;
+    height: 16px;
+    width: 16px;
+    bottom: 0;
+    position: absolute;
+    transform: translateX(64px);
+    animation: loading_713 3.5s ease both infinite;
+  }
+  
+  .load::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #D1C2FF;
+    border-radius: inherit;
+    animation: loading2_713 3.5s ease both infinite;
+  }
+  
+  @keyframes text_713 {
+    0% {
+      letter-spacing: 1px;
+      transform: translateX(0px);
+    }
+  
+    40% {
+      letter-spacing: 2px;
+      transform: translateX(26px);
+    }
+  
+    80% {
+      letter-spacing: 1px;
+      transform: translateX(32px);
+    }
+  
+    90% {
+      letter-spacing: 2px;
+      transform: translateX(0px);
+    }
+  
+    100% {
+      letter-spacing: 1px;
+      transform: translateX(0px);
+    }
+  }
+  
+  @keyframes loading_713 {
+    0% {
+      width: 16px;
+      transform: translateX(0px);
+    }
+  
+    40% {
+      width: 100%;
+      transform: translateX(0px);
+    }
+  
+    80% {
+      width: 16px;
+      transform: translateX(64px);
+    }
+  
+    90% {
+      width: 100%;
+      transform: translateX(0px);
+    }
+  
+    100% {
+      width: 16px;
+      transform: translateX(0px);
+    }
+  }
+  
+  @keyframes loading2_713 {
+    0% {
+      transform: translateX(0px);
+      width: 16px;
+    }
+  
+    40% {
+      transform: translateX(0%);
+      width: 80%;
+    }
+  
+    80% {
+      width: 100%;
+      transform: translateX(0px);
+    }
+  
+    90% {
+      width: 80%;
+      transform: translateX(15px);
+    }
+  
+    100% {
+      transform: translateX(0px);
+      width: 16px;
+    }
+  }
+   
+   
+  
+  
+
+/*---------------------------------------------------------------*/
+/* tablette */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+
+/*-----------------------------------------------------------*/
+/*telephone*/
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    main h2 {
+        font-size: 2rem;
+    }
+
+    button, .cta-button {
+        width: 100%;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .reservation {
+        padding: 20px;
+    }
 }

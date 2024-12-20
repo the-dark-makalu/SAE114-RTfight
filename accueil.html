@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue dans l'arène</title>
+    <title>Accueil</title>
     <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="font/Oswald.zip">
 </head>
+
 <body>
-    <header>
-        <h1>Accueil</h1>
+
+  <div class="loader">
+    <span class="loader-text">loading</span>
+      <span class="load"></span>
+  </div>
+
+    <header class="logo">
+        <img src="image/R-T-Fight-17-12-2024.png" alt="">
         <nav>
-            <ul>
-                <li><a href="accueil.html">Accueil</a></li>
-                <li><a href="mma.html">Planning</a></li>
-                <li><a href="about.html">À propos</a></li>
-            </ul>
-            <div class="buttons">
-                <button>Connexion</button>
-                <button>Inscription</button>
-            </div>
+                <a href="accueil.html" title="Voir l'accueil'">Accueil</a>
+                <a href="page2.html" title="Voir le planning des événements">Planning</a>
+                <a href="page3.html" title="En savoir plus sur nous">À propos</a>
         </nav>
+        <div class="buttons">
+            <button aria-label="Se connecter"><a href="page4.html">Connexion</a></button>
+            <button aria-label="Créer un compte"><a href="page4.html">Inscription</a></button>
+        </div>
     </header>
 
-    <section>
+    <main>
+        <section class="reservation">
+            <div class="content">
+                <h2>Réservez vos <br><span>places</span></h2>
+                <button class="cta-button" aria-label="Réserver en ligne"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" title="achat">Inscription en ligne</a></button>
+            </div>
+        </section>
+        <br>
         <div>
-            <h1>réservez vos <br><span>places</span></h1>
-            <button>inscription en ligne</button>
+            <h1>Billetterie :</h1>
+            🎟️ Réservez vos places dès maintenant ! <br>
+            <br>
+            <span>Catégorie VIP :</span> 150€ (places proches du ring + accès exclusif backstage) <br>
+            <span>Catégorie Or :</span> 80€ <br>
+            <span>Catégorie Standard :</span> 50€ <br>
+            <br>
+            👉 Achetez vos billets sur notre site ou aux guichets de l'Arena Fight Center. <br>
+
         </div>
-    </section>
+        <br>
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/jIexYaMAvko" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/vN_ezISX_Yc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+    </main>
+
     <footer>
+        <nav>
+            <a href="">Nous suivre !</a>
+            <a href="https://www.instagram.com/"><img src="image/instagram-brands-solid.svg" alt=""></a>
+            <a href="https://www.facebook.com/"><img src="image/facebook-brands-solid.svg" alt=""></a>
+            <a href="https://www.youtube.com/"><img src="image/youtube-brands-solid.svg" alt=""></a>
+        </nav>
     </footer>
 </body>
+
 </html>
